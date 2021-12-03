@@ -1,22 +1,13 @@
 #ifndef UF_H
 #define UF_H
 
-#include <vector>
-
-class UnionFind
+class UF
 {
-    private:
-        std::vector<int> parent_;
-        std::vector<int> rank_;
-        int count_;
     public:
-        UnionFind(int n);
-        ~UnionFind();
-
-        void do_union(int p, int q);
-        int do_find(int p);
-        bool are_connected(int p, int q);
-        int count();
+        virtual void do_union(int p, int q);
+        virtual int do_find(int p);
+        virtual bool are_connected(int p, int q);
+        virtual int count();
 };
 
 #endif
