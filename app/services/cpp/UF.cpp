@@ -1,6 +1,7 @@
 #include <iostream>
+#include <string>
 
-#include "UF.hpp"
+#include "UF.h"
 
 UnionFind::UnionFind(int n) 
 {
@@ -15,6 +16,35 @@ UnionFind::UnionFind(int n)
         this->parent_[i] = i;
         this->rank_[i] = 0;
     }
+}
+
+UnionFind::~UnionFind()
+{
+    ;
+}
+
+int UnionFind::do_find(int p)
+{
+    if (p < 0 || p >= this->parent_.size()) {
+        throw std::invalid_argument("p out of bounds");
+    }
+
+    while (p != this->parent_[p]) {
+        this->parent_[p] = this->parent_[this->parent_[p]];
+        p = this->parent_[p];
+    }
+
+    return p;
+}
+
+int UnionFind::count()
+{
+    return this->count_;
+}
+
+bool UnionFind::are_connected(int p, int q)
+{
+    return this->do_find(p) == this->do_find(q);
 }
 
 void UnionFind::do_union(int p, int q)

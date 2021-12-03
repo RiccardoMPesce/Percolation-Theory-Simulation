@@ -1,3 +1,6 @@
+#ifndef UF_H
+#define UF_H
+
 #include <vector>
 
 class UnionFind
@@ -15,3 +18,5 @@ class UnionFind
         bool are_connected(int p, int q);
         int count();
 };
+
+#endif
