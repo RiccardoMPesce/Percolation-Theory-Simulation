@@ -1,5 +1,5 @@
 #include <iostream>
-#include "UF.h"
+#include "UnionFind.h"
 
 using namespace std;
 

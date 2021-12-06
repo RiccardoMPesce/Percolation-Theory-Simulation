@@ -1,27 +1,27 @@
-#include "UnionFind.h"
+#include "WeightedUF.h"
 
-UnionFind::UnionFind(int n) 
+WeightedUF::WeightedUF(int n)
 {
     if (n < 0) {
         throw std::invalid_argument("n must be equal or greater than 0");
     }
     this->count = n;
     this->parent = std::vector<int>(n);
-    this->rank = std::vector<int>(n);
+    this->size = std::vector<int>(n);
     
     for (int i = 0; i < n; i++) {
         this->parent[i] = i;
-        this->rank[i] = 0;
+        this->size[i] = 0;
     }
 }
 
-UnionFind::~UnionFind()
+WeightedUF::~WeightedUF()
 {
     ;
 }
 
-int UnionFind::do_find(int p)
-{   
+int WeightedUF::do_find(int p)
+{
     // Check that p is within the bounds of our underlying vector
     if (p < 0 || p >= this->parent.size()) {
         throw std::invalid_argument("p out of bounds");
@@ -36,40 +36,27 @@ int UnionFind::do_find(int p)
     return p;
 }
 
-int UnionFind::get_count()
+bool WeightedUF::are_connected(int p, int q)
 {
-    return this->count;
-}
-
-bool UnionFind::are_connected(int p, int q)
-{
-    // They are connected if the root is the same element
     return this->do_find(p) == this->do_find(q);
 }
 
-void UnionFind::do_union(int p, int q)
+void WeightedUF::do_union(int p, int q)
 {
     int root_p = this->do_find(p);
     int root_q = this->do_find(q);
 
-    // The connection is trivial
     if (root_p == root_q) {
         return;
     }
 
-    // The root with the larger rank becomes the root of other one
-    // Basically, the lower rank root attaches the larger rank root
-    if (this->rank[root_p] < this->rank[root_q]) {
+    // Smaller root will point to the bigger root
+    if (this->size[root_p] < this->size[root_q]) {
         this->parent[root_p] = root_q;
+        this->size[root_q] += this->size[root_p];
     }
-    else if (this->rank[root_p] > this->rank[root_q]) {
-        this->parent[root_q] = root_p;
-    }
-    // Alternatively, if ranks are equal, root_p becomes the root
     else {
         this->parent[root_q] = root_p;
-        this->rank[root_p] += 1;
+        this->size[root_p] += this->size[root_q];
     }
-
-    this->count -= 1;
 }
