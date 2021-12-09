@@ -1,22 +1,24 @@
-#include "WeightedUF.h"
+#include <vector>
+
+#include "WeightedQuickUnionUF.h"
 
 class Percolation
 {
     private:
         int n;
-        WeightedUF* sites;
+        int n_sites;
+        WeightedQuickUnionUF* sites;
+        std::vector<bool> open_sites;
         
-        int get_site_from_coordinates(int x, int y, int z)
-        {
-            return 5;
-        }
-    
+        inline int get_site_from_coordinates(int x, int y, int z);
+        inline bool validate(int x, int y, int z);
+        
     public:
         Percolation(int n);
 
-        void open(int row, int col);
-        bool is_open(int row, int col);
-        bool is_full(int row, int col);
+        void open(int x, int y, int z);
+        bool is_open(int x, int y, int z);
+        bool is_full(int x, int y, int z);
         int get_open_sites();
         bool percolates();
 };
