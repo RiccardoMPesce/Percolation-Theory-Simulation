@@ -3,6 +3,7 @@
         "vector": "cpp",
         "bitset": "cpp",
         "chrono": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "stdexcept": "cpp"
     }
 }

@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "WeightedUF.h"
 
 WeightedUF::WeightedUF(int n)
@@ -18,6 +20,11 @@ WeightedUF::WeightedUF(int n)
 WeightedUF::~WeightedUF()
 {
     ;
+}
+
+int WeightedUF::get_count()
+{
+    return this->count;
 }
 
 int WeightedUF::do_find(int p)
@@ -59,4 +66,6 @@ void WeightedUF::do_union(int p, int q)
         this->parent[root_q] = root_p;
         this->size[root_p] += this->size[root_q];
     }
+
+    this->count -= 1;
 }

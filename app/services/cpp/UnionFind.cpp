@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "UnionFind.h"
 
 UnionFind::UnionFind(int n) 
