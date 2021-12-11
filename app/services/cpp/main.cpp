@@ -1,9 +1,12 @@
 #include <iostream>
 
-#include "Percolation.h"
+#include "MonteCarlo.h"
 
 int main(void)
 {
-    Percolation *p = new Percolation(10);
-    std::cout << p->test_coords(9, 9, 9) << " " << std::endl;
+    MonteCarlo* mc = new MonteCarlo(11, 50);
+    mc->simulate();
+    std::cout << "Threshold:" << " " << mc->get_threshold() << std::endl;
+    std::cout << "Threshold std:" << " " << mc->get_threshold_std() << std::endl;
+    delete mc;
 }

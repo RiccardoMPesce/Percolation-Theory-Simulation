@@ -4,6 +4,25 @@
         "bitset": "cpp",
         "chrono": "cpp",
         "iosfwd": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "__functional_03": "cpp",
+        "__functional_base": "cpp",
+        "__hash_table": "cpp",
+        "__threading_support": "cpp",
+        "algorithm": "cpp",
+        "atomic": "cpp",
+        "condition_variable": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "thread": "cpp",
+        "unordered_map": "cpp",
+        "utility": "cpp",
+        "*.tcc": "cpp"
     }
 }

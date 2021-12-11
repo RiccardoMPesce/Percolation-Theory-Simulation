@@ -13,18 +13,23 @@ class MonteCarlo
     private:
         int network_size;
         int n_samples;  
-        double p_threshold_mean;
-        double p_threshold_std;
+        double threshold_mean;
+        double threshold_std;
         std::vector<double> sample_thresholds;
-        Percolation* network;
+
+        double compute_threshold(Percolation* percolation);
+        double compute_mean();
+        double compute_std();
     public:
         MonteCarlo(int size, int n_samples=20);
         ~MonteCarlo();
 
         int get_network_size();
-        int get_n_percolated_samples();
-        double get_percolation_threshold_mean();
-        double get_percolation_threshold_std();
+        double get_threshold();
+        double get_threshold_std();
+
+        void simulate();
+        
 };
 
 #endif
