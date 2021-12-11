@@ -1,10 +1,9 @@
 #include <iostream>
-#include "WeightedQuickUnionUF.h"
 
-using namespace std;
+#include "Percolation.h"
 
 int main(void)
 {
-    WeightedQuickUnionUF *uf = new WeightedQuickUnionUF(1500);
-    std::cout << uf->get_count() << endl;
+    Percolation *p = new Percolation(10);
+    std::cout << p->test_coords(9, 9, 9) << " " << std::endl;
 }

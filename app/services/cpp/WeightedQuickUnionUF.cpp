@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <iostream>
 
 #include "WeightedQuickUnionUF.h"
 
@@ -8,8 +9,8 @@ WeightedQuickUnionUF::WeightedQuickUnionUF(int n)
         throw std::invalid_argument("n must be equal or greater than 0");
     }
     this->count = n;
-    this->parent.reserve(n);
-    this->size.reserve(n);
+    this->parent.resize(n);
+    this->size.resize(n);
     
     for (int i = 0; i < n; i++) {
         this->parent[i] = i;
