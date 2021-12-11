@@ -23,6 +23,11 @@ Percolation::Percolation(int n) : n(n), n_sites(n * n * n)
    this->open_sites[this->n_sites + 1] = true;
 }
 
+Percolation::~Percolation()
+{
+    delete this->sites;
+}
+
 /*
     Below methods are private because they are "auxillary" to the 
     chosen public API (methods). They are used only by the public

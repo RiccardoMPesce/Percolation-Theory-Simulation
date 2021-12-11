@@ -1,3 +1,6 @@
+#ifndef PERCOLATION_H
+#define PERCOLATION_H
+
 #include <vector>
 
 #include "WeightedQuickUnionUF.h"
@@ -17,6 +20,7 @@ class Percolation
         
     public:
         Percolation(int n);
+        ~Percolation();
 
         void open(int x, int y, int z);
         bool is_open(int x, int y, int z);
@@ -26,3 +30,5 @@ class Percolation
 
         int test_coords(int x, int y, int z);
 };
+
+#endif
