@@ -1,5 +1,36 @@
 #include "MonteCarlo.h"
 
+/*
+    These are helper, class-independent functions to calculate average and std.
+    They are supposed to accept as input a std::vector of a generic numerical 
+    type and return as output a double value representing the statistic.
+*/
+
+template<class T>
+double compute_mean(const std::vector<T> samples)
+{
+    double sum = 0.0;
+
+    for (int i = 0; i < samples.size(); i++) {
+        sum += (double)samples[i];
+    }
+
+    return sum / samples.size();
+}
+
+template<class T>
+double compute_std(const std::vector<T> samples)
+{
+    double sum = 0.0;
+    double avg = compute_mean(samples);
+
+    for (int i = 0; i < samples.size(); i++) {
+        sum += pow((double)samples[i] - avg, 2);
+    }
+
+    return sqrt(sum / samples.size());
+}
+
 MonteCarlo::MonteCarlo(int size, int n_samples): network_size(size), n_samples(n_samples)
 {
     this->sample_thresholds.resize(n_samples);
@@ -13,6 +44,11 @@ MonteCarlo::~MonteCarlo()
 int MonteCarlo::get_network_size()
 {
     return this->network_size;
+}
+
+void MonteCarlo::set_network_size(int new_size)
+{
+    this->network_size = new_size;
 }
 
 double MonteCarlo::compute_threshold(Percolation* percolation)
@@ -36,28 +72,6 @@ double MonteCarlo::compute_threshold(Percolation* percolation)
     return (double) open_sites / pow(this->network_size, 3);
 }
 
-double MonteCarlo::compute_mean()
-{
-    double sum = 0.0;
-
-    for (int i = 0; i < this->n_samples; i++) {
-        sum += this->sample_thresholds[i];
-    }
-
-    return sum / this->n_samples;
-}
-
-double MonteCarlo::compute_std()
-{
-    double sum = 0.0;
-
-    for (int i = 0; i < this->n_samples; i++) {
-        sum += pow(this->sample_thresholds[i] - this->threshold_mean, 2);
-    }
-
-    return sqrt(sum / this->n_samples);
-}
-
 void MonteCarlo::simulate()
 {
     double threshold;
@@ -68,8 +82,8 @@ void MonteCarlo::simulate()
         this->sample_thresholds[i] = threshold;
     }
 
-    this->threshold_mean = this->compute_mean();
-    this->threshold_std = this->compute_std();
+    this->threshold_mean = compute_mean<double>(this->sample_thresholds);
+    this->threshold_std = compute_std<double>(this->sample_thresholds);
 }
 
 double MonteCarlo::get_threshold()
@@ -80,4 +94,9 @@ double MonteCarlo::get_threshold()
 double MonteCarlo::get_threshold_std()
 {
     return this->threshold_std;
+}
+
+std::vector<double> MonteCarlo::get_sample_thresholds()
+{
+    return this->sample_thresholds;
 }

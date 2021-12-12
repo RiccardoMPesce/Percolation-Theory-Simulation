@@ -8,6 +8,12 @@
 
 #include "Percolation.h"
 
+template<class T>
+double compute_mean(const std::vector<T> samples);
+
+template<class T>
+double compute_std(const std::vector<T> samples);
+
 class MonteCarlo 
 {
     private:
@@ -16,20 +22,22 @@ class MonteCarlo
         double threshold_mean;
         double threshold_std;
         std::vector<double> sample_thresholds;
+        std::vector<double> sample_thresholds_custom_p;
 
         double compute_threshold(Percolation* percolation);
-        double compute_mean();
-        double compute_std();
     public:
-        MonteCarlo(int size, int n_samples=20);
+        MonteCarlo(int size, int n_samples=50);
         ~MonteCarlo();
 
         int get_network_size();
+        void set_network_size(int new_size);
         double get_threshold();
         double get_threshold_std();
+        std::vector<double> get_sample_thresholds();
+        std::vector<double> get_sample_thresholds_custom_p();
 
         void simulate();
-        
+        void simulate_custom_p(double p_custom);
 };
 
 #endif
