@@ -42,12 +42,6 @@ inline int Percolation::get_site_from_coordinates(int x, int y, int z)
 inline bool Percolation::validate(int x, int y, int z)
 {
     int cell = this->get_site_from_coordinates(x, y, z);
-    return cell > 0 && cell < this->n_sites + 1;
-}
-
-inline bool Percolation::validate_adjacent_cell(int x, int y, int z)
-{
-    int cell = this->get_site_from_coordinates(x, y, z);
     return cell >= 0 && cell <= this->n_sites + 1;
 }
 
@@ -55,32 +49,32 @@ void Percolation::connect_adjacent_cells(int x, int y, int z)
 {
     int cell = this->get_site_from_coordinates(x, y, z);
 
-    if (this->validate_adjacent_cell(x - 1, y, z)) {
+    if (this->validate(x - 1, y, z)) {
         int adj_cell = this->get_site_from_coordinates(x - 1, y, z);
         this->sites->do_union(cell, adj_cell);
     }
 
-    if (this->validate_adjacent_cell(x + 1, y, z)) {
+    if (this->validate(x + 1, y, z)) {
         int adj_cell = this->get_site_from_coordinates(x + 1, y, z);
         this->sites->do_union(cell, adj_cell);
     }
 
-    if (this->validate_adjacent_cell(x, y - 1, z)) {
+    if (this->validate(x, y - 1, z)) {
         int adj_cell = this->get_site_from_coordinates(x, y - 1, z);
         this->sites->do_union(cell, adj_cell);
     }
 
-    if (this->validate_adjacent_cell(x, y + 1, z)) {
+    if (this->validate(x, y + 1, z)) {
         int adj_cell = this->get_site_from_coordinates(x, y + 1, z);
         this->sites->do_union(cell, adj_cell);
     }
 
-    if (this->validate_adjacent_cell(x, y, z - 1)) {
+    if (this->validate(x, y, z - 1)) {
         int adj_cell = this->get_site_from_coordinates(x, y, z - 1);
         this->sites->do_union(cell, adj_cell);
     }
 
-    if (this->validate_adjacent_cell(x, y, z + 1)) {
+    if (this->validate(x, y, z + 1)) {
         int adj_cell = this->get_site_from_coordinates(x, y, z + 1);
         this->sites->do_union(cell, adj_cell);
     }

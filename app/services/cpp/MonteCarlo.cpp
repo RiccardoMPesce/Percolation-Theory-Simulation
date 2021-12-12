@@ -31,9 +31,9 @@ double compute_std(const std::vector<T> samples)
     return sqrt(sum / samples.size());
 }
 
-MonteCarlo::MonteCarlo(int size, int n_samples): network_size(size), n_samples(n_samples)
+MonteCarlo::MonteCarlo(int size): network_size(size)
 {
-    this->sample_thresholds.resize(n_samples);
+    ;
 }
 
 MonteCarlo::~MonteCarlo()
@@ -56,14 +56,15 @@ double MonteCarlo::compute_threshold(Percolation* percolation)
     int open_sites;
     int x, y, z;
 
+    // Initializing an uniform random number generator
     std::random_device rd;
-    std::mt19937 generator(rd());
-    std::uniform_int_distribution<int> dist(0, this->network_size - 1);
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist(0, this->network_size - 1);
 
     while (!percolation->percolates()) {
-        x = dist(generator);
-        y = dist(generator);
-        z = dist(generator);
+        x = dist(gen);
+        y = dist(gen);
+        z = dist(gen);
         
         percolation->open(x, y, z);
         open_sites = percolation->get_open_sites();
@@ -72,11 +73,12 @@ double MonteCarlo::compute_threshold(Percolation* percolation)
     return (double) open_sites / pow(this->network_size, 3);
 }
 
-void MonteCarlo::simulate()
+void MonteCarlo::simulate(int sample_size)
 {
+    this->sample_thresholds.resize(sample_size);
     double threshold;
 
-    for (int i = 0; i < n_samples; i++) {
+    for (int i = 0; i < sample_size; i++) {
         Percolation* network = new Percolation(this->network_size);
         threshold = this->compute_threshold(network);
         this->sample_thresholds[i] = threshold;
@@ -84,6 +86,30 @@ void MonteCarlo::simulate()
 
     this->threshold_mean = compute_mean<double>(this->sample_thresholds);
     this->threshold_std = compute_std<double>(this->sample_thresholds);
+}
+
+void MonteCarlo::simulate_custom_p(double p_custom, int sample_size)
+{
+    this->results_custom_p.resize(sample_size);
+
+    for (int i = 0; i < sample_size; i++) {
+        Percolation* network = new Percolation(this->network_size);
+        
+        // Iterating through the three dimensions of the lattice
+        for (int x = 0; x < this->network_size - 1; x++) {
+            for (int y = 0; y < this->network_size - 1; y++) {
+                for (int z = 0; z < this->network_size - 1; z++) {
+                    // Easy way to implement a random generator
+                    bool to_open = ((double)(rand() % 10000) / 10000) < p_custom;
+                    if (to_open) {
+                        network->open(x, y, z);
+                    }
+                }
+            }
+        }
+
+        this->results_custom_p[i] = network->percolates() ? 1 : 0;
+    }
 }
 
 double MonteCarlo::get_threshold()
@@ -99,4 +125,9 @@ double MonteCarlo::get_threshold_std()
 std::vector<double> MonteCarlo::get_sample_thresholds()
 {
     return this->sample_thresholds;
+}
+
+std::vector<int> MonteCarlo::get_results_custom_p()
+{
+    return this->results_custom_p;
 }
