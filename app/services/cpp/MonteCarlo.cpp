@@ -41,12 +41,12 @@ MonteCarlo::~MonteCarlo()
     ;
 }
 
-int MonteCarlo::get_network_size()
+inline int MonteCarlo::get_network_size()
 {
     return this->network_size;
 }
 
-void MonteCarlo::set_network_size(int new_size)
+inline void MonteCarlo::set_network_size(int new_size)
 {
     this->network_size = new_size;
 }
@@ -112,22 +112,22 @@ void MonteCarlo::simulate_custom_p(double p_custom, int sample_size)
     }
 }
 
-double MonteCarlo::get_threshold()
+inline double MonteCarlo::get_threshold()
 {
     return this->threshold_mean;
 }
 
-double MonteCarlo::get_threshold_std()
+inline double MonteCarlo::get_threshold_std()
 {
     return this->threshold_std;
 }
 
-std::vector<double> MonteCarlo::get_sample_thresholds()
+inline std::vector<double> MonteCarlo::get_sample_thresholds()
 {
     return this->sample_thresholds;
 }
 
-std::vector<int> MonteCarlo::get_results_custom_p()
+inline std::vector<int> MonteCarlo::get_results_custom_p()
 {
     return this->results_custom_p;
 }

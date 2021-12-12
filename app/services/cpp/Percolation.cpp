@@ -98,22 +98,22 @@ void Percolation::open(int x, int y, int z)
     this->connect_adjacent_cells(x, y, z);
 }
 
-bool Percolation::percolates()
+inline bool Percolation::percolates()
 {
     return this->sites->are_connected(0, this->n_sites + 1);
 }
 
-int Percolation::get_open_sites()
+inline int Percolation::get_open_sites()
 {
     return std::count(this->open_sites.begin(), this->open_sites.end(), true);
 }
 
-bool Percolation::is_open(int x, int y, int z)
+inline bool Percolation::is_open(int x, int y, int z)
 {
     return this->validate(x, y, z) and this->open_sites[this->get_site_from_coordinates(x, y, z)];
 }
 
-bool Percolation::is_full(int x, int y, int z)
+inline bool Percolation::is_full(int x, int y, int z)
 {
     // To keep things simple, a site is full if it's connected to the site at index 0
     return this->sites->are_connected(0, this->get_site_from_coordinates(x, y, z));

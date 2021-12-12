@@ -23,7 +23,7 @@ WeightedQuickUnionUF::~WeightedQuickUnionUF()
     ;
 }
 
-int WeightedQuickUnionUF::get_count()
+inline int WeightedQuickUnionUF::get_count()
 {
     return this->count;
 }
@@ -44,7 +44,7 @@ int WeightedQuickUnionUF::do_find(int p)
     return p;
 }
 
-bool WeightedQuickUnionUF::are_connected(int p, int q)
+inline bool WeightedQuickUnionUF::are_connected(int p, int q)
 {
     return this->do_find(p) == this->do_find(q);
 }

@@ -31,13 +31,13 @@ class MonteCarlo
         MonteCarlo(int size);
         ~MonteCarlo();
 
-        int get_network_size();
-        void set_network_size(int new_size);
-        double get_threshold();
-        double get_threshold_std();
+        inline int get_network_size();
+        inline void set_network_size(int new_size);
+        inline double get_threshold();
+        inline double get_threshold_std();
         
-        std::vector<double> get_sample_thresholds();
-        std::vector<int> get_results_custom_p();
+        inline std::vector<double> get_sample_thresholds();
+        inline std::vector<int> get_results_custom_p();
 
         void simulate(int sample_size=50);
         void simulate_custom_p(double p_custom, int sample_size=50);

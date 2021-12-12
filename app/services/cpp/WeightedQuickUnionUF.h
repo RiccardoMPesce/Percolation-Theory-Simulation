@@ -15,8 +15,8 @@ class WeightedQuickUnionUF
 
         void do_union(int p, int q);
         int do_find(int p);
-        bool are_connected(int p, int q);
-        int get_count();       
+        inline bool are_connected(int p, int q);
+        inline int get_count();       
 };
 
 #endif
