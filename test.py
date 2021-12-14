@@ -1,3 +1,3 @@
 import build.wrap
 
-print(dir(build.wrap))
+print(build.wrap.__doc__)
