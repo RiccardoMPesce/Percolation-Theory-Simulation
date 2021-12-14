@@ -1,0 +1,1 @@
+{"args": ["/Users/riccardopesce/opt/miniconda3/bin/cmake", "-DCMAKE_BUILD_TYPE:STRING=Release", "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=12.0", "-DCMAKE_OSX_ARCHITECTURES:STRING=x86_64"], "version": "3.21.3", "environment": {"PYTHONNOUSERSITE": null, "PYTHONPATH": null}}

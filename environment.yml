@@ -1,0 +1,15 @@
+name: py3
+channels: 
+  - conda-forge
+  - anaconda
+dependencies:
+  - cmake
+  - python
+  - scipy
+  - numpy
+  - pandas
+  - scikit-learn
+  - fastapi
+  - pybind11
+  - matplotlib
+  - seaborn
