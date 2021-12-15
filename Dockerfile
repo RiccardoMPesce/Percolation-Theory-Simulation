@@ -1,15 +1,15 @@
 FROM continuumio/miniconda3
 
-WORKDIR .
+WORKDIR /.
 COPY ./ ./src
 
 RUN apt-get update && apt-get -y install build-essential cmake
 
-WORKDIR ./build
+WORKDIR /build
 
 RUN cmake ../src && make 
 
-WORKDIR ../src
+WORKDIR /../src
 
 RUN conda env create -f environment.yml
 SHELL ["conda", "run", "-n", "py3", "/bin/bash", "-c"]
