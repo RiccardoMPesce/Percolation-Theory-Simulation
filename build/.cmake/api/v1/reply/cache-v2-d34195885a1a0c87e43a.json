@@ -39,11 +39,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -467,11 +467,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Enable/Disable output of compile commands during generation."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -1035,7 +1035,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1435,7 +1435,19 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/local/bin/python3.93.9.9"
+			"value" : "/Users/riccardopesce/opt/miniconda3/python.app/Contents/MacOS/python3.9.7"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Python"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/Users/riccardopesce/opt/miniconda3/bin/python3.9][/Users/riccardopesce/opt/miniconda3/include/python3.9][/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.9.7()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",
@@ -1447,7 +1459,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/local/bin/python3.9][v3.9.9()]"
+			"value" : "[/Users/riccardopesce/opt/miniconda3/python.app/Contents/MacOS/python][v3.9.7()]"
 		},
 		{
 			"name" : "HAS_FLTO",
@@ -1534,6 +1546,18 @@
 			"value" : "OFF"
 		},
 		{
+			"name" : "PYBIND11_PYTHON_EXECUTABLE_LAST",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Python executable during the last CMake run"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/Users/riccardopesce/opt/miniconda3/bin/python3.9"
+		},
+		{
 			"name" : "PYBIND11_PYTHON_VERSION",
 			"properties" : 
 			[
@@ -1571,7 +1595,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/local/bin/python3.9"
+			"value" : "/Users/riccardopesce/opt/miniconda3/python.app/Contents/MacOS/python"
 		},
 		{
 			"name" : "PYTHON_INCLUDE_DIRS",
@@ -1583,7 +1607,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9"
+			"value" : "/Users/riccardopesce/opt/miniconda3/python.app/Contents/include/python3.9"
 		},
 		{
 			"name" : "PYTHON_IS_DEBUG",
@@ -1607,7 +1631,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/libpython3.9.dylib"
+			"value" : "/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib"
 		},
 		{
 			"name" : "PYTHON_LIBRARY",
@@ -1623,7 +1647,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/libpython3.9.dylib"
+			"value" : "/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib"
 		},
 		{
 			"name" : "PYTHON_MODULE_EXTENSION",
@@ -1659,7 +1683,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3.9.9"
+			"value" : "3.9.7"
 		},
 		{
 			"name" : "PYTHON_VERSION_MAJOR",
@@ -1684,42 +1708,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "9"
-		},
-		{
-			"name" : "Project_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/build"
-		},
-		{
-			"name" : "Project_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "Project_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation"
 		},
 		{
 			"name" : "Python_ADDITIONAL_VERSIONS",
@@ -1755,7 +1743,91 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "PYTHON"
+			"value" : "Python"
+		},
+		{
+			"name" : "_Python_DEVELOPMENT_EMBED_SIGNATURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "6df62fb79c54b213919fb0ebb5e18d37"
+		},
+		{
+			"name" : "_Python_DEVELOPMENT_MODULE_SIGNATURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "0ad042f79c8d6a19301fcc22ec452c87"
+		},
+		{
+			"name" : "_Python_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/Users/riccardopesce/opt/miniconda3/bin/python3.9"
+		},
+		{
+			"name" : "_Python_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/Users/riccardopesce/opt/miniconda3/include/python3.9"
+		},
+		{
+			"name" : "_Python_INTERPRETER_PROPERTIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Python Properties"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "Python;3;9;7;64;;cpython-39-darwin;/Users/riccardopesce/opt/miniconda3/lib/python3.9;/Users/riccardopesce/opt/miniconda3/lib/python3.9;/Users/riccardopesce/opt/miniconda3/lib/python3.9/site-packages;/Users/riccardopesce/opt/miniconda3/lib/python3.9/site-packages"
+		},
+		{
+			"name" : "_Python_INTERPRETER_SIGNATURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ac990413b31ad5cbfd38a75024bbf30c"
+		},
+		{
+			"name" : "_Python_LIBRARY_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib"
 		},
 		{
 			"name" : "percolation_theory_simulation_BINARY_DIR",
@@ -1839,7 +1911,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include;/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9"
+			"value" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include;/Users/riccardopesce/opt/miniconda3/include/python3.9"
 		},
 		{
 			"name" : "pybind11_IS_TOP_LEVEL",

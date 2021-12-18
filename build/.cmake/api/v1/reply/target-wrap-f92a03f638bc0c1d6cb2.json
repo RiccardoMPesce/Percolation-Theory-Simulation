@@ -5,49 +5,71 @@
 			"path" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/app/services/wrap.cpython-39-darwin.so"
 		}
 	],
-	"backtrace" : 2,
+	"backtrace" : 4,
 	"backtraceGraph" : 
 	{
 		"commands" : 
 		[
 			"add_library",
+			"__Python_add_library",
+			"python_add_library",
 			"pybind11_add_module",
 			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"extern/pybind11/tools/pybind11Tools.cmake",
+			"/usr/local/Cellar/cmake/3.22.1/share/cmake/Modules/FindPython/Support.cmake",
+			"/usr/local/Cellar/cmake/3.22.1/share/cmake/Modules/FindPython.cmake",
+			"extern/pybind11/tools/pybind11NewTools.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
 			{
-				"file" : 1
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 205,
+				"parent" : 1
 			},
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 9,
-				"parent" : 0
+				"line" : 580,
+				"parent" : 2
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 165,
-				"parent" : 1
+				"line" : 3316,
+				"parent" : 3
 			},
 			{
-				"command" : 2,
+				"command" : 4,
 				"file" : 0,
-				"line" : 167,
-				"parent" : 1
+				"line" : 3321,
+				"parent" : 3
 			},
 			{
-				"command" : 3,
-				"file" : 1,
-				"line" : 4,
+				"command" : 5,
+				"file" : 3,
+				"line" : 5,
 				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 214,
+				"parent" : 1
 			}
 		]
 	},
@@ -57,7 +79,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -fvisibility=hidden"
+					"fragment" : " -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -fPIC -fvisibility=hidden"
 				},
 				{
 					"fragment" : "-std=gnu++11"
@@ -72,18 +94,18 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 6,
 					"path" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/app/services/cpp"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 5,
 					"isSystem" : true,
-					"path" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include"
+					"path" : "/Users/riccardopesce/opt/miniconda3/include/python3.9"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9"
+					"path" : "/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include"
 				}
 			],
 			"language" : "CXX",
@@ -91,9 +113,9 @@
 			{
 				"backtraces" : 
 				[
-					3,
-					3,
-					3
+					7,
+					7,
+					7
 				],
 				"standard" : "11"
 			},
@@ -116,22 +138,22 @@
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 5,
 				"fragment" : "-Xlinker",
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 5,
 				"fragment" : "-undefined",
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 5,
 				"fragment" : "-Xlinker",
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 5,
 				"fragment" : "dynamic_lookup",
 				"role" : "flags"
 			}
@@ -161,29 +183,29 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 2,
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "app/services/cpp/wrap.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "app/services/cpp/MonteCarlo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "app/services/cpp/Percolation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "app/services/cpp/WeightedQuickUnionUF.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "MODULE_LIBRARY"
 }

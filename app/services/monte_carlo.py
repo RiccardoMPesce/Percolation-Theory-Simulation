@@ -1,7 +1,5 @@
 import wrap
 
-class WrapperClass:
-    def __init__(self, size):
-        self.mc = wrap.monte_carlo(size)
-
-    
+mc = wrap.monte_carlo(10)
+mc.simulate()
+print(mc.get_threshold())

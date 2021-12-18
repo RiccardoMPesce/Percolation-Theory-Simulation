@@ -16,7 +16,7 @@ PYBIND11_MODULE(wrap, handle) {
     .def("get_threshold_std", &MonteCarlo::get_threshold_std)
     .def("get_sample_thresholds", &MonteCarlo::get_sample_thresholds)
     .def("get_results_custom_p", &MonteCarlo::get_results_custom_p)
-    .def("simulate", &MonteCarlo::simulate)
+    .def("simulate", &MonteCarlo::simulate, py::arg("sample_size") = 50)
     .def("simulate_custom_p", &MonteCarlo::simulate_custom_p)
     ;
 }

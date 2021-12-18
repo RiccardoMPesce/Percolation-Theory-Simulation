@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -Dwrap_EXPORTS
 
-CXX_INCLUDES = -I/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/app/services/cpp -isystem /Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include -isystem /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9
+CXX_INCLUDES = -I/Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/app/services/cpp -isystem /Users/riccardopesce/opt/miniconda3/include/python3.9 -isystem /Users/riccardopesce/Work/University/APL/Percolation-Theory-Simulation/extern/pybind11/include
 
-CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -fvisibility=hidden -std=gnu++11
+CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -fPIC -fvisibility=hidden -std=gnu++11
 
