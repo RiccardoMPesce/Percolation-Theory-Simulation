@@ -79,7 +79,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -fPIC -fvisibility=hidden"
+					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -fPIC -fvisibility=hidden"
 				},
 				{
 					"fragment" : "-std=gnu++11"

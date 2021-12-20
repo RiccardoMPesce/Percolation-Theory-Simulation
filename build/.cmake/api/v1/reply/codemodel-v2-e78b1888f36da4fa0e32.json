@@ -10,7 +10,7 @@
 					[
 						1
 					],
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -24,7 +24,7 @@
 				},
 				{
 					"build" : "extern/pybind11",
-					"jsonFile" : "directory-extern.pybind11-8dfc4421fd7ebc2c69d2.json",
+					"jsonFile" : "directory-extern.pybind11-Debug-8dfc4421fd7ebc2c69d2.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.4"
@@ -34,7 +34,7 @@
 					"source" : "extern/pybind11"
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -66,7 +66,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wrap::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wrap-f92a03f638bc0c1d6cb2.json",
+					"jsonFile" : "target-wrap-Debug-6cd51ddaedc442b51d39.json",
 					"name" : "wrap",
 					"projectIndex" : 0
 				}

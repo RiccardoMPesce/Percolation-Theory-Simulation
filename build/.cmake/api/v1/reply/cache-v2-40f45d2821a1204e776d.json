@@ -39,11 +39,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "Debug"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -467,11 +467,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Enable/Disable output of compile commands during generation."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "BOOL",
-			"value" : ""
+			"value" : "TRUE"
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/Users/riccardopesce/opt/miniconda3/bin/python3.9][/Users/riccardopesce/opt/miniconda3/include/python3.9][/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.9.7()]"
+			"value" : "[/Users/riccardopesce/opt/miniconda3/bin/python3.9][/Users/riccardopesce/opt/miniconda3/include/python3.9][/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.9.9()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",

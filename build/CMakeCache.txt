@@ -20,9 +20,8 @@ CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 //Path to a program.
 CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
 
-//Choose the type of build, options are: None Debug Release RelWithDebInfo
-// MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+//No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -81,8 +80,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
+//No help, variable specified on the command line.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -490,7 +489,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PYTHON
 FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/Users/riccardopesce/opt/miniconda3/python.app/Contents/MacOS/python3.9.7
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/riccardopesce/opt/miniconda3/bin/python3.9][/Users/riccardopesce/opt/miniconda3/include/python3.9][/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.9.7()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/riccardopesce/opt/miniconda3/bin/python3.9][/Users/riccardopesce/opt/miniconda3/include/python3.9][/Users/riccardopesce/opt/miniconda3/lib/libpython3.9.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.9.9()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/Users/riccardopesce/opt/miniconda3/python.app/Contents/MacOS/python][v3.9.7()]
 //Test HAS_FLTO

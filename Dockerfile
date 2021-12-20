@@ -1,19 +1,21 @@
-FROM python:latest
+FROM python:3.9
 
-WORKDIR /.
-COPY ./ ./src
+WORKDIR /src
+COPY . .
+RUN rm -rf build/
 
-RUN apt-get update && apt-get -y install build-essential cmake
+RUN apt-get update && apt-get -y install build-essential cmake python3-dev
 
-WORKDIR /build
+WORKDIR /src/build
 
-RUN cmake ../src && make 
+RUN cmake ..
+RUN make
 
-WORKDIR /../src
+WORKDIR /src
 
-RUN conda env create -f environment.yml
-SHELL ["conda", "run", "-n", "py3", "/bin/bash", "-c"]
+RUN pip install --no-cache-dir --upgrade -r /src/requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["conda", "run", "-n", "py3", "python3", "main.py"]
+# CMD ["python", "main.py"]
+CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "5000"]
