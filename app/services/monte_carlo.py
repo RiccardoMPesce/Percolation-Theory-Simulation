@@ -24,7 +24,7 @@ class SimulationService:
         mc = wrap.monte_carlo(size)
         mc.simulate(sample_size)
 
-        return mc.get_sample_thresholds()
+        return {"results": mc.get_sample_thresholds()}
 
     def multiple_simulations(self, size: int, sample_size: int = 20, n_simulations: int = 10):
         """
