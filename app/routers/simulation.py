@@ -18,14 +18,6 @@ def root_simulation():
 def test_simulation():
     return {"message": "ok"}
 
-@router.get("/basic_simulation/{size}/{sample_size}")
-def basic_simulation(size: int, sample_size: int):
-    return mc.basic_simulation(size, sample_size)
-
-@router.get("/basic_simulation/thresholds/{size}/{sample_size}")
-def basic_simulation_thresholds(size: int, sample_size: int):
-    return mc.basic_simulation_thresholds(size, sample_size)
-
-@router.get("/multiple_simulations/{size}/{sample_size}/{n_simulations}")
-def multiple_simulations(size: int, sample_size: int, n_simulations: int):
-    return mc.multiple_simulations(size, sample_size, n_simulations)
+@router.get("/simulate/{size}/{sample_size}")
+def simulate(size: int, sample_size: int):
+    return mc.simulate(size, sample_size)
