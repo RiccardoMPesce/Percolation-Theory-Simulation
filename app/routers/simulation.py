@@ -14,8 +14,6 @@ mc = SimulationService()
 def root_simulation():
     return {"message": "Please enter valid simulation related commands"}
 
-# Esempio ciao
-
 @router.get("/test_simulation")
 def test_simulation():
     return {"message": "ok"}
