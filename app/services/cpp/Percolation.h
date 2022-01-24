@@ -10,7 +10,7 @@ class Percolation
     private:
         int n;
         int n_sites;
-        WeightedQuickUnionUF* sites;
+        WeightedQuickUnionUF sites;
         std::vector<bool> open_sites;
         
         int get_site_from_coordinates(int x, int y, int z);

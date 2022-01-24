@@ -26,7 +26,7 @@ class MonteCarlo
         std::vector<double> sample_thresholds;
         std::vector<int> results_custom_p;
 
-        double compute_threshold(Percolation* percolation);
+        double compute_threshold(Percolation percolation);
     public:
         MonteCarlo(int size);
         ~MonteCarlo();
