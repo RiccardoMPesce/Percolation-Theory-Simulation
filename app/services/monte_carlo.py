@@ -19,3 +19,9 @@ class SimulationService:
             "threshold_std": mc.get_threshold_std(),
             "results": mc.get_sample_thresholds()
         }
+
+    def simulate_custom_p(self, p: float, size: int, sample_size: int = 20):
+        mc = wrap.monte_carlo(size)
+        mc.simulate_custom_p(p, sample_size)
+
+        return {"results": mc.get_results_custom_p()}

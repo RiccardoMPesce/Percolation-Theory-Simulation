@@ -16,9 +16,11 @@ int main(int argc, char **argv)
     int n_sims = (atoi(argv[2]));
     
     MonteCarlo* mc = new MonteCarlo(size);
-    mc->simulate(n_sims);
-    std::cout << "Threshold:" << " " << mc->get_threshold() << std::endl;
-    std::cout << "Threshold std:" << " " << mc->get_threshold_std() << std::endl;
+    mc->simulate_custom_p(0.2, n_sims);
+    for (int i = 0; i < mc->get_results_custom_p().size(); i++) {
+        std::cout << mc->get_results_custom_p().at(i) << std::endl;
+    }
+
     delete mc;
     
     return 0;

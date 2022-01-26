@@ -1,3 +1,4 @@
+#include <iostream>
 #include <stdexcept>
 #include <algorithm>  
 
@@ -11,7 +12,7 @@ int Percolation::test_coords(int x, int y, int z)
 Percolation::Percolation(int n) : n(n), n_sites(n * n * n), sites(n_sites + 2)
 {
     open_sites.resize(n_sites + 2);
-    open_sites.assign(n_sites + 1, false);
+    open_sites.assign(n_sites + 2, false);
 
     /*
         We added an open block in the beginning and another one 

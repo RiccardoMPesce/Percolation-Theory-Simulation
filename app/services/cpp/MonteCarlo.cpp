@@ -91,17 +91,20 @@ void MonteCarlo::simulate(int sample_size)
 void MonteCarlo::simulate_custom_p(double p_custom, int sample_size)
 {
     results_custom_p.resize(sample_size);
+    std::random_device rd;
+    std::default_random_engine eng(rd());
+    std::uniform_real_distribution<double> distr(0, 1);
+
+    int count;
 
     for (int i = 0; i < sample_size; i++) {
         Percolation network = Percolation(network_size);
         
         // Iterating through the three dimensions of the lattice
-        for (int x = 0; x < network_size - 1; x++) {
-            for (int y = 0; y < network_size - 1; y++) {
-                for (int z = 0; z < network_size - 1; z++) {
-                    // Easy way to implement a random generator
-                    bool to_open = ((double)(rand() % 10000) / 10000) < p_custom;
-                    if (to_open) {
+        for (int x = 0; x < network_size; x++) {
+            for (int y = 0; y < network_size; y++) {
+                for (int z = 0; z < network_size; z++) {
+                    if (distr(eng) <= p_custom) {
                         network.open(x, y, z);
                     }
                 }
