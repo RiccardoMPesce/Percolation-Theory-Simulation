@@ -104,7 +104,7 @@ bool Percolation::percolates()
 
 int Percolation::get_open_sites()
 {
-    return std::count(open_sites.begin(), open_sites.end(), true);
+    return std::count(open_sites.begin(), open_sites.end(), true) - 2;
 }
 
 bool Percolation::is_open(int x, int y, int z)
