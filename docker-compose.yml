@@ -1,7 +1,0 @@
-version: "3.9"
-
-services:
-  percolation-theory-simulation:
-    build: .
-    ports:
-      - "5000:5000"

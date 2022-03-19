@@ -7,7 +7,7 @@
 */
 
 template<class T>
-double compute_mean(const std::vector<T> samples)
+double compute_mean(const std::vector<T>& samples)
 {
     double sum = 0.0;
 
@@ -19,7 +19,7 @@ double compute_mean(const std::vector<T> samples)
 }
 
 template<class T>
-double compute_std(const std::vector<T> samples)
+double compute_std(const std::vector<T>& samples)
 {
     double sum = 0.0;
     double avg = compute_mean(samples);
@@ -51,7 +51,7 @@ void MonteCarlo::set_network_size(int size)
     network_size = size;
 }
 
-double MonteCarlo::compute_threshold(Percolation percolation)
+double MonteCarlo::compute_threshold(Percolation& percolation)
 {
     int open_sites;
     int x, y, z;

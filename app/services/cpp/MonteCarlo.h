@@ -10,10 +10,10 @@
 #include "Percolation.h"
 
 template<class T>
-double compute_mean(const std::vector<T> samples);
+double compute_mean(const std::vector<T>& samples);
 
 template<class T>
-double compute_std(const std::vector<T> samples);
+double compute_std(const std::vector<T>& samples);
 
 class MonteCarlo 
 {
@@ -26,7 +26,7 @@ class MonteCarlo
         std::vector<double> sample_thresholds;
         std::vector<int> results_custom_p;
 
-        double compute_threshold(Percolation percolation);
+        double compute_threshold(Percolation& percolation);
     public:
         MonteCarlo(int size);
         ~MonteCarlo();
