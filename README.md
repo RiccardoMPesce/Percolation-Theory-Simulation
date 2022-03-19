@@ -13,3 +13,6 @@ Il modulo wrapper è gia compilato, se si desidera ricompilarlo, eseguire `cd bu
 ### Documentazione API
 Utilizzando `curl` od un web browser, digitare nella barra degli indirizzi `http://0.0.0.0/5000/simulation/simulate/{dimensione}/{numero_campioni}` (con curl, anteporre `curl` all'indirizzo), specificando la dimensione del lattice ed il numero di campioni. Verrà tornato un oggetto json contenente `threshold`, ossia la soglia di percolazione calcolata sul campione, `threshold_std`, ossia la deviazione standard del campione ed infine `results`, che sarebbe l'array di dimensione `dimensione` contenente i risultati delle `numero_campioni` simulazioni.
 Utilizzando sempre `curl` od un browser, si può usare il comando `http://0.0.0.0/5000/simulation/simulate_custom_p/{soglia}/{dimensione}/{numero_campioni}` per simulare la proporzione di campioni che percola data una soglia scelta dall'utente.
+
+### Cosa fare per aggiornare pybind
+Avviare il seguente comando (CMake potrebbe fallire altrimenti) `git submodule update --init --recursive`.
